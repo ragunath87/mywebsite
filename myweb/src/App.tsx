@@ -1,10 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Navigation from './core/navigation/Navbar';
+import Footer from './core/navigation/Footer';
+import MainBody from './core/component/MainBody';
 
 function App() {
   return (
-    <h1>This is Ragunath Page</h1>
+    <div >
+      <Navigation />
+      <MainBody />
+      <Footer />
+    </div>
   );
 }
 

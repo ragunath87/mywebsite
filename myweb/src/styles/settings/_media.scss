@@ -1,0 +1,17 @@
+$breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+@mixin breakpoint($screen-size){
+    @if map-has-key($breakpoints, $screen-size ){
+        @media (min-width: map-get($breakpoints, $screen-size)){
+            @content;
+        }
+    }
+    @else{
+        @warn "'#{$screen-size}' has not been declared.";
+    }
+}
