@@ -1,0 +1,34 @@
+@use '../themes/default/themes' as *;
+
+$textColors: ( 
+  'default' : $default,
+  'primary' : $primary, 
+  'secondary' : $secondary,😂
+  'teritiary' : $teritiary);
+
+@mixin fontSizeGenerator($name, $font-sizes...) {
+    @each $color-name, $color-value in $textColors {
+      @for $i from 0 to length($font-sizes) {
+        // generate the font size based on availablitiy in include tag using 
+        $font-size: #{nth($font-sizes, $i + 1)} + px;
+        // Color and font size is mergered as a className
+        $class-name: ".#{$name}#{nth($font-sizes, $i + 1)}";
+        // generating color name for for my use case
+        $keys : #{$color-name};
+
+        // for My use case i dont want default name to be presented in generated output so i am cutting out "default"
+        @if $keys != default {
+            #{$class-name}-#{$color-name} {
+                font-size: $font-size;
+                color: $color-value;
+            }
+        } @else {
+            // here i want the complete font size and text color's generated.
+            #{$class-name} {
+                font-size: $font-size;
+                color: $color-value;
+            }
+        }
+      }
+    }
+  }

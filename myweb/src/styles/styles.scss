@@ -1,0 +1,36 @@
+@use '../styles/assets/css/bootstrap.css' as *;
+@use "../styles/themes/default/themes" as *;
+@use "../styles/utilities/alert" as *;
+@use "../styles/utilities/buttons" as *;
+@use "../styles/utilities/title" as *;
+
+@use "../styles/base/base.styles" as *;
+
+
+/* Client Styles */ 
+// Client : Default Base
+
+body{
+    background-color: #272727;
+    background-repeat: no-repeat;
+    background-position: 100%
+}
+
+header{
+    background-color: transparent;
+
+    & .navBrand{
+        color: #fff;
+    }
+}
+
+footer{
+    background-color: #272727;
+    border: 0px;
+    & .CopyInfo{
+        color: #ffffff;
+    }
+}
+    
+
+@include fontSizeGenerator(title, "16", "18", "20");

@@ -1,0 +1,52 @@
+@use '../assets/css/bootstrap.css' as *;
+@use '../settings/media' as *;
+
+body{
+    background-image: #aeaeae;
+}
+
+header{
+    display: block;
+    background-color: #aeaeae;
+    padding: 1rem 0rem;
+    z-index: 2;
+
+    & .navBrand{
+        color: #fff;
+        text-transform: uppercase;
+
+        &::before{
+            content: '< ';
+            color: #FFF;
+        }
+
+        &::after{
+            content: ' />';
+            color: #FFF;
+        }
+    }
+
+    & .HeaderLinks{
+        color: #FFF;
+        margin-left: auto;
+    }
+}
+
+.fillBody{
+    min-height: calc(100vh - 144px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    border-top: 1px solid #aeaeae;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+
+    & .CopyInfo{
+        color: #fff;
+    }
+}
